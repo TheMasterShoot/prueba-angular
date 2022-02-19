@@ -1,0 +1,9 @@
+<div class="row" infinite-scroll (scrolled)="onScrollDown()">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let car of cars">
+        <app-cars [car]="car"></app-cars>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound">
+        <p>Parece que llegaste al final</p>
+    </div>
+</div>
+<button class="btn btn-dark" (click)="onScrollUp()" [ngClass]="'no-hidden'">Ir arriba</button>

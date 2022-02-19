@@ -1,0 +1,19 @@
+<div class="row justify-content-center mt-3" *ngIf="car$ | async as car">
+    <div class="col-xs-12 col-sm-6 col-md-6 justify-content-center" >
+        <div class="card">
+            <div class="image">
+                    <img [src]="car.img_url" [alt]="car.make" class="card-img-top"/>    
+            </div>
+            <div class="card-inner">
+                <div class="header">
+                        <h2>{{car.make}}</h2>
+                    <h4 class="text-muted">Modelo: {{car.model}}</h4>
+                    <h4 class="text-muted">Año: {{car.year}}</h4>
+                    <h4 class="text-muted">Caballos de fuerza: {{car.horsepower}}</h4>
+                    <h4 class="text-muted">Precio: {{car.price}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-dark" (click)="onBack()">Atras</button>
