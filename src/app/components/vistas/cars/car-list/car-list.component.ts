@@ -16,8 +16,6 @@ export class CarListComponent implements OnInit {
 
   cars: CarsI[] = [];
   private query:string ='';
- // private hideScrollHight = 200;
- // private showscrollHeight = 500;
 
   constructor(@Inject(DOCUMENT) private document:Document, private api: apiService, private route:ActivatedRoute, private router:Router) { 
     this.onUrlChanged();
@@ -45,7 +43,6 @@ export class CarListComponent implements OnInit {
 
   private getCarByQuery(): void {
     this.route.queryParams.pipe(take(1)).subscribe(params => {
-      //console.log('params-->', params);
       this.query = params['q'];
       this.getDataFromService();
     });
