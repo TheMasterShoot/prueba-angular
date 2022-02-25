@@ -14,7 +14,7 @@ export class BusquedaComponent implements OnInit {
   }
 
   onSearch(value: string){
-    if (value && value.length > 2){
+    if (value && value.length > 1){
       this.router.navigate(['/car-list'], {
         queryParams: { q: value },
       });

@@ -1,8 +1,8 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CarsI } from 'src/app/compartido/models/cars.interface';
 import { apiService } from 'src/app/compartido/services/api.service';
 import { filter, take } from 'rxjs/operators';
-import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { TrackHttpError } from 'src/app/compartido/models/trackHttpError';
 
@@ -14,8 +14,8 @@ import { TrackHttpError } from 'src/app/compartido/models/trackHttpError';
 })
 export class CarListComponent implements OnInit {
 
-  cars: CarsI[] = [];
-  private query:string ='';
+  cars!: CarsI[];
+  private query!: string;
 
   constructor(@Inject(DOCUMENT) private document:Document, private api: apiService, private route:ActivatedRoute, private router:Router) { 
     this.onUrlChanged();
